@@ -1,10 +1,12 @@
+import React from "react"
+import ReactDOM from "react-dom"
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+const name = "Luis Miguel"
+const jsx = (
+    <div>
+        <h1>Hello, Platzi Badges! mi nombre es {name}</h1>
+        <p>Actualmente estoy estudiando en platzi. :)</p>
+    </div>
+)
 
-const element = <h1>Hello, Platzi Badges!</h1>;
-
-const container = document.getElementById('app');
-
-
-ReactDOM.render(element, container);
+ReactDOM.render(jsx, document.getElementById("app"))
