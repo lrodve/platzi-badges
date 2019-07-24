@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import '../styles/Badge.css'
 import confLogo from '../images/badge-header.svg'
+import Gravatar from './Gravatar'
+
 
 export default class Badge extends Component {
 
   render() {
     
     //props
-    const {name, lastName, avatar, jobTitle, twitter} = this.props
+    const {name, lastName, jobTitle, twitter, email} = this.props
 
     return (
       <div className="badge_container">
@@ -16,7 +18,7 @@ export default class Badge extends Component {
         </div>
 
         <div className="badge_content">
-          <img src={avatar} alt="Avatar" />
+          <Gravatar email={email}/>
           <h1>
             <p>{name}<br /> {lastName}</p>
           </h1>

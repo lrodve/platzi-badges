@@ -19,27 +19,27 @@ export default class BadgeForm extends Component {
         console.log("boton encendido :)")
     }
 
-    handleSubmit = (e) => {
+    /* handleSubmit = (e) => {
         e.preventDefault()
         console.log("boton encendido :)")
         console.log(this.state)
-    }
+    } */
     render() {
 
         //State
         //const { firstName,lastName, email, jobTitle, twitter } = this.state 
 
         //Methods
-        const { handleSubmit } = this
+        //const { handleSubmit } = this
 
         //Props 
-        const { onChange, formValues } = this.props 
+        const { onChange, onSubmit, formValues, error } = this.props 
 
 
         return (
             <div>
                 <h1>New Attendant</h1>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="form-group">
                         <label>First Name</label>
                         <input onChange={onChange} className="form-control" type="text" name="firstName" value={formValues.firstName} />
@@ -61,7 +61,10 @@ export default class BadgeForm extends Component {
                         <input onChange={onChange} className="form-control" type="text" name="twitter" value={formValues.twitter} />
                     </div>
 
-                    <button type="submit" onClick={handleSubmit} className="btn btn-success">Save</button>
+                    <button type="submit" className="btn btn-success">Save</button>
+                    {error && (
+                        <p className="text-danger ">Error: {error.message}</p>
+                    )}
                 </form>
             </div>
         )

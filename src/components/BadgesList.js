@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Gravatar from '../components/Gravatar'
 
 export default class BadgesList extends Component {
     render() {
@@ -19,7 +20,7 @@ export default class BadgesList extends Component {
                             <div className="container shadow-sm mb-4 badge_card_container">
                                 <div className="row">
                                     <div className="col-3 d-flex align-items-center justify-content-center ">
-                                        <img className="badge_img"src={badge.avatarUrl} alt=""/>
+                                      <Gravatar email={badge.email}/>
                                     </div>
                                     <div className="col">
                                         <h5><strong> {badge.firstName} {badge.lastName}</strong> </h5>

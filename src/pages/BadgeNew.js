@@ -4,16 +4,22 @@ import '../styles/BadgeNew.css'
 
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
+import PageLoading from '../components/PageLoading'
+
 import header from '../images/badge-header.svg'
 import yuumi from '../images/yuumi.png'
+import api from '../api'
 
 export default class BadgeNew extends Component{
-    state = { form: {
-      firstName : '',
-      lastName : '',
-      email : '',
-      jobTitle : '',
-      twitter : ''  
+    state = { 
+        loading: false,
+        error: null,
+        form: {
+            firstName : '',
+            lastName : '',
+            email : '',
+            jobTitle : '',
+            twitter : ''  
     } };
 
   /*  Forma 1 para agregar datos al state
@@ -35,13 +41,30 @@ export default class BadgeNew extends Component{
         })
     }
 
+    handleSubmit = async (e) => {
+      e.preventDefault()
+      this.setState({loading: true, error: null})
+
+      try{
+          await api.badges.create(this.state.form)
+          this.setState({loading: false})
+          this.props.history.push('/badges')
+      }catch(error){
+          this.setState({loading: false, error:error})
+      }
+    }
+
     render(){
         
         //State
-        const { form } = this.state
+        const { form, loading, error } = this.state
 
         //Methods
-        const { handleChange } = this
+        const { handleChange, handleSubmit } = this
+
+        if(loading){
+            return <PageLoading/>
+        }
 
         return(
             <React.Fragment>
@@ -54,17 +77,21 @@ export default class BadgeNew extends Component{
                     <div className="row">
                         <div className=" col-md-6  ">
                             <Badge 
-                            name={form.firstName}
-                            lastName={form.lastName}
+                            name={form.firstName || 'Luis Miguel'}
+                            lastName={form.lastName || 'Rodriguez'}
                             avatar={yuumi}
-                            jobTitle={form.jobTitle}
-                            twitter={form.twitter}
-                            email={form.email}
+                            jobTitle={form.jobTitle || 'Fronted Engineer'}
+                            twitter={form.twitter || 'lrodve'}
+                            email={form.email || 'inf.lrodriguez@gmail.com' }
                             />
                         </div>
 
                         <div className=" col-md-6">
-                            <BadgeForm onChange={handleChange} formValues={form} /> 
+                            <BadgeForm 
+                            onChange={handleChange} 
+                            onSubmit={handleSubmit} 
+                            formValues={form}
+                            error={error} /> 
                         </div>
 
                     

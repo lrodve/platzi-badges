@@ -47,13 +47,13 @@ export default class Badges extends Component {
             return(
                 <PageLoading/>
             )
-        }  
+        }   
 
         if(error){
             return (
                 <PageError error={error.message}/>
             )
-        }
+        } 
       
 
         return (
@@ -75,6 +75,7 @@ export default class Badges extends Component {
 
                 <div className="Badges__list">
                     <div className="Badges__container">
+
                         <BadgesList badges={data} />
 
 
