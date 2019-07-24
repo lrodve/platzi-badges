@@ -1,0 +1,30 @@
+.home__container{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    background-image: url('../images/stars.svg');
+    height: calc(100vh - 66px);
+
+}
+
+.home__content{
+    margin-top: -66px;
+}
+
+
+.home__left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.home__left .btn-success{
+    margin-top: 10px;
+    width: 180px;
+}
+
+.home__left h2{
+    padding-top: 10px;
+}

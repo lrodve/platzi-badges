@@ -1,12 +1,18 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-const name = "Luis Miguel"
-const jsx = (
-    <div>
-        <h1>Hello, Platzi Badges! mi nombre es {name}</h1>
-        <p>Actualmente estoy estudiando en platzi. :)</p>
-    </div>
-)
 
-ReactDOM.render(jsx, document.getElementById("app"))
+
+//Router
+import App from './components/App'
+
+
+
+//styles
+import 'bootstrap/dist/css/bootstrap.css' 
+import './styles/index.css'
+
+
+
+
+ReactDOM.render(<App/>, document.getElementById("app"))
