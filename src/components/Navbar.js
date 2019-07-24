@@ -12,8 +12,8 @@ export default class Navbar extends Component{
             <div className="container-fluid">
                 <Link to="/" className="Navbar__brand">    
                     <img className="Navbar__brand-logo" src={logo} alt=""/>
-                    <span className="font-weight-light">Platzi</span>
-                    <span className="font-weight-bold"> Conf</span>
+                 {/*    <span className="font-weight-light">Platzi</span>
+                    <span className="font-weight-bold"> Conf</span> */}
                 </Link>
              </div>
            </div>

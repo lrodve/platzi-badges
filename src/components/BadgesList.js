@@ -5,6 +5,12 @@ export default class BadgesList extends Component {
 
         const { badges } =  this.props
 
+        if(badges.length === 0){
+            return(
+                <h2>No Badges found</h2>
+            )
+        }
+
         return (
             <ul className="list-unstyled">
                 {badges.map(badge => {
