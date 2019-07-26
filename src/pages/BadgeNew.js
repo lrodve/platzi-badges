@@ -87,6 +87,7 @@ export default class BadgeNew extends Component{
                         </div>
 
                         <div className=" col-md-6">
+                            <h1>New Attendant</h1>
                             <BadgeForm 
                             onChange={handleChange} 
                             onSubmit={handleSubmit} 

@@ -69,7 +69,7 @@ export default class Badges extends Component {
                 </div>
                 <div className="Badges__container">
                     <div className="Badges__buttons">
-                        <Link to="./badges/new" className="btn btn-success">New Badge</Link>
+                        <Link to="/badges/new" className="btn btn-success">New Badge</Link>
                     </div>
                 </div>
 

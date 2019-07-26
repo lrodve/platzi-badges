@@ -38,7 +38,6 @@ export default class BadgeForm extends Component {
 
         return (
             <div>
-                <h1>New Attendant</h1>
                 <form onSubmit={onSubmit}>
                     <div className="form-group">
                         <label>First Name</label>
