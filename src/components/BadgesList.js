@@ -18,7 +18,7 @@ export default class BadgesList extends Component {
                 {badges.map(badge => {
                     return (
                         <li key={badge.id}>
-                            <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+                            <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}`}>
                                 <div className="container shadow-sm mb-4 badge_card_container">
                                     <div className="row">
                                         <div className="col-3 d-flex align-items-center justify-content-center ">
