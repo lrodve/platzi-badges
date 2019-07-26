@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import BadgesList from '../components/BadgesList'
 import PageLoading from '../components/PageLoading'
+import MiniLoader from '../components/MiniLoader'
 import PageError from '../components/PageError'
 
 import '../styles/Badges.css'
@@ -23,6 +24,8 @@ export default class Badges extends Component {
 
     componentDidMount(){
         this.fetchData()
+
+        this.intervalID = setInterval(this.fetchData, 5000);
     }
 
 
@@ -37,13 +40,16 @@ export default class Badges extends Component {
         }
     }
 
+    componentWillUnmount(){
+        clearInterval(this.intervalID)
+    }
     
     render() {
         //state
         const { data, loading, error } = this.state
 
 
-        if(loading){
+        if(loading && !data){
             return(
                 <PageLoading/>
             )
@@ -80,6 +86,10 @@ export default class Badges extends Component {
 
 
                     </div>
+                    <div className="d-flex justify-content-center">
+                    {loading && <MiniLoader/>}
+                    </div>
+                    
                 </div>
             </React.Fragment>
         )
