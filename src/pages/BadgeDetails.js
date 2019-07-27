@@ -1,5 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
+
 
 
 import '../styles/BadgeDetails.css'
@@ -43,6 +45,7 @@ export default function BadgeDetails(props) {
                         </div>
                         <div className="mt-2">
                             <button className="btn btn-danger btn-block">Delete</button>
+                            {ReactDOM.createPortal(<h1>Hola, Realmente no estoy aqui</h1>, document.getElementById('modal'))}
                         </div>
                     </div>
                 </div>
