@@ -28,3 +28,7 @@
 .home__left h2{
     padding-top: 10px;
 }
+
+.home__image{
+    width: 100%;
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 function useSearchBadges(badges){
-    const {state, setState} = useState(null)
+    //const {state, setState} = useState(null)
     const [query, setQuery] = useState('')
     const [filteredBadges, setfilteredBadges] = useState(badges) 
     
@@ -28,7 +28,7 @@ export default function BadgesList(props) {
         return (
             <React.Fragment>
                 <div className="form-group">
-                    <label class="font-weight-bold">Filter Badges</label>
+                    <label className="font-weight-bold">Filter Badges</label>
                     <input type="text" className="form-control"
                         value={query}
                         onChange={(e) => {
@@ -44,7 +44,7 @@ export default function BadgesList(props) {
     return (
         <React.Fragment>
             <div className="form-group">
-                <label class="font-weight-bold">Filter Badges</label>
+                <label className="font-weight-bold">Filter Badges</label>
                 <input type="text" className="form-control"
                     value={query}
                     onChange={(e) => {

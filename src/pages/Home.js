@@ -17,8 +17,8 @@ export default function Home () {
                         <h5 >The easiest way to manage your conference</h5>
                         <Link  className="btn btn-success" to="/badges">Start Now</Link>
                     </div>
-                    <div className="col">
-                        <img src={astronauts} alt=""/>
+                    <div className="col-md-12 col-lg-7">
+                        <img className="home__image" src={astronauts} alt=""/>
                     </div>
                 </div>
             </div>
